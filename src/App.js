@@ -1,14 +1,14 @@
-import "./App.css";
+import './App.css';
 import React from 'react';
-import { Route, Routes } from "react-router-dom";
-import BulkUploadButton from "./components/BulkUploadButton/BulkUploadButton";
-import Footer from "./components/Footer/Footer";
-import NavBar from "./components/NavBar/NavBar";
-import ProductTable from "./components/ProductTable/ProductTable";
-import ScrollToTop from "react-scroll-to-top";
-import { HiOutlineChevronDoubleUp } from "react-icons/hi";
-import Home from "./components/Home";
-import PageNotFound from "./pages/PageNotFound";
+import { Route, Routes } from 'react-router-dom';
+import BulkUploadButton from './components/BulkUploadButton/BulkUploadButton';
+import Footer from './components/Footer/Footer';
+import NavBar from './components/NavBar/NavBar';
+import ProductTable from './components/ProductTable/ProductTable';
+import ScrollToTop from 'react-scroll-to-top';
+import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
+import Home from './components/Home';
+import PageNotFound from './pages/PageNotFound';
 
 function App() {
   return (

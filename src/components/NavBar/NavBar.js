@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
-import { FaFacebook, FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { TfiWorld } from "react-icons/tfi";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
+import { FaFacebook, FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { TfiWorld } from 'react-icons/tfi';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
-  const [navBg, setNavBg] = useState("#00001e");
+  const [navBg, setNavBg] = useState('#00001e');
 
   const handleNav = () => {
     setNav(!nav);
@@ -17,13 +17,13 @@ const Navbar = () => {
     const handleShadow = () => {
       if (window.scrollY >= 90) {
         setShadow(true);
-        setNavBg("#000000");
+        setNavBg('#000000');
       } else {
         setShadow(false);
-        setNavBg("#000010");
+        setNavBg('#000010');
       }
     };
-    window.addEventListener("scroll", handleShadow);
+    window.addEventListener('scroll', handleShadow);
   }, []);
 
   return (
@@ -31,9 +31,10 @@ const Navbar = () => {
       style={{ backgroundColor: `${navBg}` }}
       className={
         shadow
-          ? "fixed w-full h-20 shadow-lg shadow-gray-700 z-[100] ease-in-out duration-300 "
-          : "fixed w-full h-20 z-[100] "
-      }>
+          ? 'fixed w-full h-20 shadow-lg shadow-gray-700 z-[100] ease-in-out duration-300 '
+          : 'fixed w-full h-20 z-[100] '
+      }
+    >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <a href="/">
           <div className="text-white flex">
@@ -55,7 +56,8 @@ const Navbar = () => {
               <a
                 href="https://www.linkedin.com/in/md-tanvir-hassan-490253240/"
                 target="_blank"
-                rel="noreferrer">
+                rel="noreferrer"
+              >
                 <div className="rounded-full bg-blue-500 p-3 -mt-3 cursor-pointer hover:scale-105 ease-in duration-300 ">
                   <FaLinkedinIn />
                 </div>
@@ -65,7 +67,8 @@ const Navbar = () => {
               <a
                 href="https://www.facebook.com/tanvirhassanmim"
                 target="_blank"
-                rel="noreferrer">
+                rel="noreferrer"
+              >
                 <div className="rounded-full bg-blue-500 p-3 -mt-3 cursor-pointer hover:scale-105 ease-in duration-300 ">
                   <FaFacebook />
                 </div>
@@ -75,7 +78,8 @@ const Navbar = () => {
               <a
                 href="https://github.com/MdTanvirHassan"
                 target="_blank"
-                rel="noreferrer">
+                rel="noreferrer"
+              >
                 <div className="rounded-full bg-purple-100 p-3 -mt-3 cursor-pointer hover:scale-105 ease-in duration-300 ">
                   <FaGithub />
                 </div>
@@ -85,7 +89,8 @@ const Navbar = () => {
               <a
                 href="mailto:tanvirtamim72@gmail.com"
                 target="_blank"
-                rel="noreferrer">
+                rel="noreferrer"
+              >
                 <div className="rounded-full bg-red-400 p-3 -mt-3 cursor-pointer hover:scale-105 ease-in duration-300 ">
                   <AiOutlineMail />
                 </div>
@@ -95,7 +100,8 @@ const Navbar = () => {
               <a
                 href="https://personal-portfolio-next-7ny3rhpx1-mdtanvirhassan.vercel.app/"
                 target="_blank"
-                rel="noreferrer">
+                rel="noreferrer"
+              >
                 <div className="rounded-full bg-green-400 p-3 -mt-3 cursor-pointer hover:scale-105 ease-in duration-300 ">
                   <TfiWorld />
                 </div>
@@ -105,7 +111,8 @@ const Navbar = () => {
           {/* Hamburger Icon */}
           <div
             onClick={handleNav}
-            className="md:hidden rounded-full bg-gray-600 p-2">
+            className="md:hidden rounded-full bg-gray-600 p-2"
+          >
             <AiOutlineMenu size={25} className="text-white" />
           </div>
         </div>
@@ -115,15 +122,17 @@ const Navbar = () => {
       {/* Overlay */}
       <div
         className={
-          nav ? "md:hidden fixed left-0 top-0 w-full h-screen bg-black/70" : ""
-        }>
+          nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70' : ''
+        }
+      >
         {/* Side Drawer Menu */}
         <div
           className={
             nav
-              ? " fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500"
-              : "fixed left-[-100%] top-0 p-10 ease-in duration-500"
-          }>
+              ? ' fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500'
+              : 'fixed left-[-100%] top-0 p-10 ease-in duration-500'
+          }
+        >
           <div>
             <div className="flex w-full items-center justify-between">
               <a href="/">
@@ -131,7 +140,8 @@ const Navbar = () => {
               </a>
               <div
                 onClick={handleNav}
-                className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer ">
+                className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer "
+              >
                 <AiOutlineClose className="text-black" />
               </div>
             </div>
@@ -145,12 +155,12 @@ const Navbar = () => {
               </Link>
               <Link to="/product">
                 <li onClick={() => setNav(false)} className="py-4 text-sm">
-                  About
+                  Product
                 </li>
               </Link>
               <Link to="/update">
                 <li onClick={() => setNav(false)} className="py-4 text-sm">
-                  Edit
+                  Update
                 </li>
               </Link>
             </ul>
@@ -162,7 +172,8 @@ const Navbar = () => {
                 <a
                   href="https://www.linkedin.com/in/md-tanvir-hassan-490253240"
                   target="_blank"
-                  rel="noreferrer">
+                  rel="noreferrer"
+                >
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300 social-icons">
                     <FaLinkedinIn />
                   </div>
@@ -170,7 +181,8 @@ const Navbar = () => {
                 <a
                   href="https://github.com/MdTanvirHassan"
                   target="_blank"
-                  rel="noreferrer">
+                  rel="noreferrer"
+                >
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300 social-icons">
                     <FaGithub />
                   </div>
@@ -178,20 +190,24 @@ const Navbar = () => {
                 <a
                   href="mailto:tanvirtamim72@gmail.com"
                   target="_blank"
-                  rel="noreferrer">
+                  rel="noreferrer"
+                >
                   <div
                     onClick={() => setNav(!nav)}
-                    className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300 social-icons">
+                    className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300 social-icons"
+                  >
                     <AiOutlineMail />
                   </div>
                 </a>
                 <a
                   href="https://personal-portfolio-next-7ny3rhpx1-mdtanvirhassan.vercel.app/"
                   target="_blank"
-                  rel="noreferrer">
+                  rel="noreferrer"
+                >
                   <div
                     onClick={() => setNav(!nav)}
-                    className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300 social-icons">
+                    className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300 social-icons"
+                  >
                     <TfiWorld />
                   </div>
                 </a>

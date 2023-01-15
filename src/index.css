@@ -1,3 +1,7 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,51 +15,59 @@ html {
 
 @layer base {
   body {
-    @apply  tracking-wide bg-[#ecf0f3] text-[#1f2937]
+    @apply tracking-wide bg-[#ecf0f3] text-[#1f2937];
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
   }
 
   h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl font-[Raleway]
+    @apply text-4xl sm:text-5xl md:text-6xl font-[Raleway];
   }
 
   h2 {
-    @apply text-3xl sm:text-4xl
+    @apply text-3xl sm:text-4xl;
   }
-  
-  p{
-    @apply text-white
+
+  p {
+    @apply text-white;
   }
   li {
-    @apply cursor-pointer hover:border-b-gray-500 text-[#5651e5] active:text-green-300 hover:text-orange-200 ease-in duration-300
-   }
+    @apply cursor-pointer hover:border-b-gray-500 text-[#5651e5] active:text-green-300 hover:text-orange-200 ease-in duration-300;
+  }
 
   button {
-    @apply text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2
+    @apply text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2;
   }
 }
 
-@layer components{
-  .container{
-    @apply py-0 px-5 md:px-20 m-auto
+@layer components {
+  .container {
+    @apply py-0 px-5 md:px-20 m-auto;
   }
-  .button{
-    @apply bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-10 py-2.5 text-center mr-2 mb-2
+  .button {
+    @apply bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-10 py-2.5 text-center mr-2 mb-2;
   }
   .home .tagline {
     font-weight: 700;
     letter-spacing: 0.8px;
     padding: 8px 10px;
-    background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
+    background: linear-gradient(
+      90.21deg,
+      rgba(170, 54, 124, 0.5) -5.91%,
+      rgba(74, 47, 189, 0.5) 111.58%
+    );
     border: 1px solid rgba(255, 255, 255, 0.5);
     font-size: 20px;
     margin-bottom: 16px;
     display: flex;
-    border:1px solid gray
-    
+    border: 1px solid gray;
   }
   .home button {
     color: #fff;
@@ -65,7 +77,7 @@ html {
     letter-spacing: 0.8px;
     display: flex;
     align-items: center;
-    border:1px solid gray
+    border: 1px solid gray;
   }
   .home button svg {
     font-size: 25px;
