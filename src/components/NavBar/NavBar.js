@@ -50,7 +50,7 @@ const Navbar = () => {
               <Link to="/product">Product</Link>
             </li>
             <li className="ml-7 text-sm uppercase text-white hover:border-b">
-              <Link to="/update">Update</Link>
+              <Link to="/update">Edit</Link>
             </li>
             <li className="ml-5 lg:ml-64 2xl:ml-[33rem]  text-sm uppercase text-white hover:text-white">
               <a
@@ -109,19 +109,26 @@ const Navbar = () => {
             </li>
           </ul>
           {/* Hamburger Icon */}
-          <div
-            onClick={handleNav}
-            className="md:hidden rounded-full bg-gray-600 p-2"
-          >
-            <AiOutlineMenu size={25} className="text-white" />
+          <div onClick={handleNav} className="md:hidden flex  p-2">
+            <Link to="/">
+              <li className="p-1 text-xs list-none text-purple-500 mx-1">
+                Home
+              </li>
+            </Link>
+            <Link to="/product">
+              <li className="p-1 text-xs list-none text-purple-500 mx-1">
+                Product
+              </li>
+            </Link>
+            <Link to="/update">
+              <li className="p-1 text-xs list-none text-purple-500 mx-1">
+                Edit
+              </li>
+            </Link>
+            <AiOutlineMenu size={25} className="text-white rounded-full " />
           </div>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {/* Overlay */}
-      
-        
     </div>
   );
 };
