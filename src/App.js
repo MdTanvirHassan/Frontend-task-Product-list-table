@@ -17,7 +17,7 @@ function App() {
       <ScrollToTop
         className="bg-none hover:bg-none text-black font-extrabold rounded-full "
         smooth
-        component={<HiOutlineChevronDoubleUp className="-ml-2" />}
+        component={<HiOutlineChevronDoubleUp className="ml-3" />}
       />
 
       <Routes>

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import ProductTable from "./ProductTable/ProductTable";
-import BulkUploadButton from "./BulkUploadButton/BulkUploadButton";
-import PuffLoader from "react-spinners/PuffLoader";
-import { BsArrowRightCircle } from "react-icons/bs";
+import React, { useState, useEffect } from 'react';
+import ProductTable from './ProductTable/ProductTable';
+import BulkUploadButton from './BulkUploadButton/BulkUploadButton';
+import PuffLoader from 'react-spinners/PuffLoader';
+import { BsArrowRightCircle } from 'react-icons/bs';
 
 function Home() {
   const [showTable, setShowTable] = useState(false);
@@ -15,14 +15,15 @@ function Home() {
     }, 1000);
   }, []);
   const styles = {
-    height: "350px",
+    height: '350px',
   };
   return (
     <>
       {preLoading ? (
         <div
           className="flex justify-center text-center items-center h-screen"
-          style={styles}>
+          style={styles}
+        >
           <PuffLoader
             color="#36d7b7"
             loading={preLoading}
@@ -39,8 +40,9 @@ function Home() {
             {!showTable ? (
               <div className=" flex home items-center justify-center">
                 <button
-                  className="home tagline text-center"
-                  onClick={() => setShowTable(true)}>
+                  className="home tagline text-center bg-blue-400 p-4 rounded-md"
+                  onClick={() => setShowTable(true)}
+                >
                   Edit Prices Table <BsArrowRightCircle size={25} />
                 </button>
               </div>
@@ -48,8 +50,9 @@ function Home() {
               <>
                 <div className="items-center justify-center text-center">
                   <button
-                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-8 rounded-lg mr-2 text-center"
-                    onClick={() => setShowTable(false)}>
+                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-8 rounded-lg mr-2 text-center "
+                    onClick={() => setShowTable(false)}
+                  >
                     Hide Edit Table
                   </button>
                 </div>

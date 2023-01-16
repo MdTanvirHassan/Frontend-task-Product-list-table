@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import PuffLoader from "react-spinners/PuffLoader";
+import React, { useState, useEffect } from 'react';
+import PuffLoader from 'react-spinners/PuffLoader';
 
 const ProductList = () => {
   const [editing, setEditing] = useState(false);
@@ -16,14 +16,14 @@ const ProductList = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "https://demostore.mirailit.com/wp-json/wc/v3/products",
+        'https://demostore.mirailit.com/wp-json/wc/v3/products',
         {
-          method: "GET",
+          method: 'GET',
           headers: {
             Authorization:
-              "Basic " +
+              'Basic ' +
               btoa(
-                "ck_35f64c79ebe2cfd6979b6f81c103ff01135ae1b8:cs_1dd3842d9bdc656ace99007faef0bb09a4d34400"
+                'ck_35f64c79ebe2cfd6979b6f81c103ff01135ae1b8:cs_1dd3842d9bdc656ace99007faef0bb09a4d34400'
               ),
           },
         }
@@ -47,15 +47,15 @@ const ProductList = () => {
   const handleBatchUpdate = async () => {
     try {
       const response = await fetch(
-        "https://demostore.mirailit.com/wp-json/wc/v3/products/batch",
+        'https://demostore.mirailit.com/wp-json/wc/v3/products/batch',
         {
-          method: "POST",
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
             Authorization:
-              "Basic " +
+              'Basic ' +
               btoa(
-                "ck_35f64c79ebe2cfd6979b6f81c103ff01135ae1b8:cs_1dd3842d9bdc656ace99007faef0bb09a4d34400"
+                'ck_35f64c79ebe2cfd6979b6f81c103ff01135ae1b8:cs_1dd3842d9bdc656ace99007faef0bb09a4d34400'
               ),
           },
           body: JSON.stringify({ update: products }),
@@ -66,15 +66,15 @@ const ProductList = () => {
         throw new Error(json.message);
       }
       console.log(json);
-      alert("Price update successful!");
+      alert('Price update successful!');
       setEditing(false);
     } catch (error) {
       console.log(error);
-      alert("Batch update failed. Please try again.");
+      alert('Batch update failed. Please try again.');
     }
   };
   const styles = {
-    height: "450px",
+    height: '450px',
   };
 
   return (
@@ -83,15 +83,26 @@ const ProductList = () => {
         Product List -UpdateAble
       </h2>
       <div className="text-center  items-center justify-center mb-5">
-        <button className="text-white button" onClick={handleEdit}>
-          {editing ? "Cancel" : "Edit"}
+        <button
+          className="text-black bg-red-400 p-3 rounded-md px-8 button"
+          onClick={handleEdit}
+        >
+          {editing ? 'Cancel' : 'Edit'}
         </button>
-        {editing && <button onClick={handleBatchUpdate}>Update Prices</button>}
+        {editing && (
+          <button
+            onClick={handleBatchUpdate}
+            className="text-black bg-purple-600 px-8 p-3 rounded-md"
+          >
+            Update Prices
+          </button>
+        )}
       </div>
       {preLoading ? (
         <div
           className="flex justify-center text-center items-center"
-          style={styles}>
+          style={styles}
+        >
           <PuffLoader
             color="#36d7b7"
             loading={preLoading}
@@ -116,7 +127,8 @@ const ProductList = () => {
             {products.map((product, index) => (
               <tr
                 key={product.id}
-                className="border border-gray-200 p-2 shadow-md rounded-md mt-5 hover:bg-gray-100">
+                className="border border-gray-200 p-2 shadow-md rounded-md mt-5 hover:bg-gray-100"
+              >
                 <td className="border border-r-gray-300 p-2">
                   <img
                     src={product.images[0].src}
